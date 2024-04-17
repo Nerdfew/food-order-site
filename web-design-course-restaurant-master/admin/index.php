@@ -1,5 +1,4 @@
-
-<?php include('partials/menu.php'); ?>
+<?php include("partials/menu.php"); ?>
         <div class="main-content">
         <div class= "wrapper"> 
         <h1>Dashboard</h1>
