@@ -9,6 +9,11 @@
                   echo $_SESSION['add'];
                   unset($_SESSION['add']);
             }
+            if(isset($_SESSION['delete']))
+            {
+                  echo $_SESSION['delete'];
+                  unset($_SESSION['delete']);
+            }
             
             ?>
             <br>
@@ -54,7 +59,7 @@
                         <td><?php echo $username;?></td> 
                         <td>
                               <a href="#" class="btn btn-secondary">  Update Admin </a>
-                             <a href="#" class="btn btn-danger"> Delete Admin </a>
+                             <a href="<?php echo SITEURL; ?>admin/delete-admin.php?id=<?php echo $id; ?>" class="btn btn-danger"> Delete Admin </a>
                         </td>
                   </tr>
 
