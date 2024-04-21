@@ -13,13 +13,13 @@ $res = mysqli_query($conn, $sql);
 if($res==true)
 {
    // echo "Admin Deleted";
-   $_SESSION['delete'] = "Admin Deleted Succesfully";
-   header('localhost:'.SITEURL.'admin/manage-admin.php');
+   $_SESSION['delete'] = "<div class='success'>Admin Deleted Succesfully.</div>";
+   header('location:'.SITEURL.'admin/manage-admin.php');
 }
 else{
     //echo "Failed to Delete Admin";
-    $_SESSION['delete'] = "Failed to Delete Admin. Try Again Later";
-   header('localhost:'.SITEURL.'admin/manage-admin.php');
+    $_SESSION['delete'] = "<div class='error'>Failed to Delete Admin. Try Again Later.</div>";
+   header('location:'.SITEURL.'admin/manage-admin.php');
 }
 
 //3. redirect to manage admin page with message (success/error)
