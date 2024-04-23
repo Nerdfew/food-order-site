@@ -21,12 +21,31 @@
                   unset($_SESSION['update']);
             }
             
+            if(isset($_SESSION['user-not-found']))
+            {
+                  echo $_SESSION['user-not-found'];
+                  unset($_SESSION['user-not-found']);
+            }
+
+            if(isset($_SESSION['pwd-not-match']))
+            {
+                  echo $_SESSION['pwd-not-match'];
+                  unset($_SESSION['pwd-not-match']);
+            }
+
+            if(isset($_SESSION['change-pwd']))
+            {
+                  echo $_SESSION['change-pwd'];
+                  unset($_SESSION['change-pwd']);
+            }
+
             ?>
             <br>
             <br>
+            
             <a href="/Untitled/food-order-site/web-design-course-restaurant-master/admin/add-admin.php" class="btn btn-primary">Add Admin</a>
 
-            <table class="tbl">
+            <table class="tbl-full">
                   <tr>
                         <th>S.N.</th>
                         <th>First Name</th>
