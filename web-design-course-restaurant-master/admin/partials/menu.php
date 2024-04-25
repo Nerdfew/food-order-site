@@ -3,6 +3,10 @@
     include ("/Applications/XAMPP/xamppfiles/htdocs/Untitled/food-order-site/web-design-course-restaurant-master/admin/partials/login-check.php");
 ?>
 
+<?php  
+  //check whether the user is logged in or not 
+?> 
+
 <html>
     <head>
         <title>Food Order Website - Home Page</title>

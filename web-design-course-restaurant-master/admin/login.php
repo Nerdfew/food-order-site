@@ -18,7 +18,7 @@
                 }
 
                 if(isset($_SESSION['no-login-message']))
-                {
+                { 
                     echo $_SESSION['no-login-message'];
                     unset($_SESSION['no-login-message']);
                 }
