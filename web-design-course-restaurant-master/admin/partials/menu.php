@@ -1,6 +1,6 @@
 <?php 
-    include("../config/constants.php"); 
-    include ('login-check.php');
+    include("/Applications/XAMPP/xamppfiles/htdocs/Untitled/food-order-site/config/constants.php"); 
+    include ("/Applications/XAMPP/xamppfiles/htdocs/Untitled/food-order-site/web-design-course-restaurant-master/admin/partials/login-check.php");
 ?>
 
 <html>

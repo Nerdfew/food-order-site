@@ -82,7 +82,7 @@
   //SQL Query to submit to database
 
   $sql = "INSERT INTO tbl_admin SET 
-    admin_name = '$full_name',
+    name = '$full_name',
     admin_username = '$username',
     admin_password = '$username'
   ";

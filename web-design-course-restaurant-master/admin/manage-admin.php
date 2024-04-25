@@ -71,7 +71,7 @@
                               if($rows > 0) {
                                     while($rows=mysqli_fetch_assoc($res)) {
                                           $id = $rows['admin_id'];
-                                          $full_name = $rows['admin_name'];
+                                          $full_name = $rows['name'];
                                           $username = $rows['admin_username'];
                                           $password = $rows['admin_password'];
 
@@ -83,9 +83,9 @@
                         <td><?php echo $full_name;?></td>
                         <td><?php echo $username;?></td> 
                         <td>
-                              <a href="<?php echo $SITEURL; ?>admin/update-password.php?id=<?php echo $id; ?>" class="btn-primary">Change Password</a>
-                              <a href="<?php echo $SITEURL; ?>admin/update-admin.php?id=<?php echo $id; ?>" class="btn btn-secondary">  Update Admin </a>
-                             <a href="<?php echo $SITEURL; ?>admin/delete-admin.php?id=<?php echo $id; ?>" class="btn btn-danger"> Delete Admin </a>
+                        <a href="<?php echo SITE_HOME; ?>admin/update-password.php?id=<?php echo $id; ?>" class="btn btn-primary">Change Password</a>
+                        <a href="<?php echo SITE_HOME; ?>admin/update-admin.php?id=<?php echo $id; ?>" class="btn btn-secondary">Update Admin</a>
+                              <a href="<?php echo SITE_HOME; ?>admin/delete-admin.php?id=<?php echo $id; ?>" class="btn btn-danger">Delete Admin</a>
                         </td>
                   </tr>
 

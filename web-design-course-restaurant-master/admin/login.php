@@ -1,4 +1,4 @@
-<?php include('../config/constants.php'); ?>
+<?php include('/Applications/XAMPP/xamppfiles/htdocs/Untitled/food-order-site/config/constants.php'); ?>
 
 <html>
     <head>
@@ -32,41 +32,50 @@
     Password: <br>
     <input type="password" name="password" placeholder="Enter Password"> <br> <br>
 
-    <input type="submit" name="submit" value="login" class="btn-primary"><br>
+    <input type="submit" name="submit" value="Login" class="btn-primary"><br>
 </form>
 <br><br>
             <p class="text-center">Created by - <a href="www.Proj.com"></a>Capstone Project</p>
         </div>
+        </body>
+</html>
 
-        <?php 
-if(isset($_POST['submit'])){
-   // echo"Button Clicked";
+
+<?php 
+if(isset($_POST['submit']))
+{
+    
 
    $username = $_POST['username'];
-   $password = md5($_POST['password']);
+   $password = $_POST['password'];
 
-   $sql= "SELECT* FROM tbl_admin WHERE username='$username' AND password='$password'";
+   $sql= "SELECT * FROM tbl_admin WHERE admin_username='$username' AND admin_password='$password'";
+   
    $res = mysqli_query($conn, $sql);
-$count = mysqli_num_rows($res);
+   
+
+    $count = mysqli_num_rows($res);
+    echo $count;
 if($count==1){
    // echo "Successfully Submitted!";
     $_SESSION['login'] = "<div class='success'>Login Successfully.</div>";
     $_SESSION['user'] = $username;
-
+    echo $count;
 
     //Redirect to manage admin page
-    header("location:".SITEURL.'admin/');
+    header("location:".SITE_HOME.'admin/');
+    exit;
   
    }
    else {
     $_SESSION['login'] = "<div class='error text-center'>Username or Password did not match.</div>";
-  
+    echo $count;
     //Redirect to manage admin page
-    header("location:".SITEURL.'admin/login.php');
-   }
+  
+  header("location:".SITE_HOME.'admin/login.php');   
+}
 }
 ?>
 
 
-    </body>
-</html>
+  

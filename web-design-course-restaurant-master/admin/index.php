@@ -1,4 +1,6 @@
-<?php include("partials/menu.php"); ?>
+<?php include("/Applications/XAMPP/xamppfiles/htdocs/Untitled/food-order-site/web-design-course-restaurant-master/admin/partials/menu.php"); ?>
+<?php include ("/Applications/XAMPP/xamppfiles/htdocs/Untitled/food-order-site/web-design-course-restaurant-master/admin/partials/login-check.php");?>
+
         <div class="main-content">
         <div class= "wrapper"> 
         <h1>Dashboard</h1>
