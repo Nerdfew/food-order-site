@@ -18,7 +18,7 @@
                 }
 
                 if(isset($_SESSION['no-login-message']))
-                {
+                { 
                     echo $_SESSION['no-login-message'];
                     unset($_SESSION['no-login-message']);
                 }
@@ -45,9 +45,10 @@ if(isset($_POST['submit'])){
    $username = $_POST['username'];
    $password = md5($_POST['password']);
 
-   $sql= "SELECT* FROM tbl_admin WHERE username='$username' AND password='$password'";
+   $sql= "SELECT * FROM tbl_admin WHERE username='$username' AND password='$password'";
    $res = mysqli_query($conn, $sql);
-$count = mysqli_num_rows($res);
+    $count = mysqli_num_rows($res);
+
 if($count==1){
    // echo "Successfully Submitted!";
     $_SESSION['login'] = "<div class='success'>Login Successfully.</div>";
@@ -55,14 +56,14 @@ if($count==1){
 
 
     //Redirect to manage admin page
-    header("location:".SITEURL.'admin/');
+    header("location:".SITE_HOME.'admin/');
   
    }
    else {
     $_SESSION['login'] = "<div class='error text-center'>Username or Password did not match.</div>";
   
     //Redirect to manage admin page
-    header("location:".SITEURL.'admin/login.php');
+    header("location:".SITE_HOME.'admin/login.php');
    }
 }
 ?>

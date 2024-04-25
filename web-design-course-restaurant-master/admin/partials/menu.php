@@ -3,6 +3,10 @@
     include ('login-check.php');
 ?>
 
+<?php  
+  //check whether the user is logged in or not 
+?> 
+
 <html>
     <head>
         <title>Food Order Website - Home Page</title>
