@@ -29,6 +29,9 @@
 .tbl-30 {
     width:30%;
 }
+.tbl-full {
+    width: 100px;
+}
 
 .random-test {
 
@@ -37,13 +40,17 @@
 
 table tr th{
     border-bottom: 1px solid black;
-    padding: 1%;
+    padding: 5%;
     text-align:left;
 
 }
 
+table tr {
+    padding-left:5%;
+}
+
 table tr td {
-    padding:1%;
+    padding-left:1%;
 }
 .text-center{
     text-align: center;
