@@ -3,7 +3,7 @@
 <div class="main-content">
         <div class= "wrapper"> 
         <h1>Manage Category</h1>
-</div> </div>
+
 <?php 
 
             if(isset($_SESSION['add']))
@@ -11,23 +11,41 @@
                 echo $_SESSION['add'];
                 unset($_SESSION['add']);
             }
+
+            if(isset($_SESSION['remove']))
+            {
+                echo $_SESSION['remove'];
+
+                unset($_SESSION['remove']);
+
+
+            }
+
+            if(isset($_SESSOIN['delete'])) {
+                
+                
+                 echo $_SESSION['delete'];
+
+                unset($_SESSION['delete']);
+            }
          
             ?>
             <br>  <br>
             
-            <a href="<?php echo SITE_HOME; ?> admin/add-category.php" class="btn btn-primary">Add Category</a>
+            <a href="<?php echo SITE_HOME; ?>/admin/add-category.php" class="btn btn-primary">Add Category</a>
 
-            <table class="tbl-full">
+            <table class="table">
                   <tr>
-                        <th>S.N.</th>
-                        <th>First Name</th>
-                        <th>Username</th>
-                        <th>Actions</th>
+                        <th scope="col">S.N.</th>
+                        <th scope="col">Category Title</th>
+                        <th scope="col">Image Name</th>
+                        <th scope="col">Featured</th>
+                        <th scope="col">Active</th>
                   </tr>
 
                   <?php
                         //query for all admins 
-                        $sql ="SELECT * FROM tbl_admin";
+                        $sql ="SELECT * FROM category";
 
                         //execute query
 
@@ -42,21 +60,34 @@
 
                               if($rows > 0) {
                                     while($rows=mysqli_fetch_assoc($res)) {
-                                          $id = $rows['admin_id'];
-                                          $full_name = $rows['name'];
-                                          $username = $rows['admin_username'];
-                                          $password = $rows['admin_password'];
+                                          $id = $rows['category_id'];
+                                          $title = $rows['category_title'];
+                                          $image_name = $rows['category_image'];
+                                          $featured = $rows['category_featured'];
+                                          $active = $rows['category_active'];
 
 
                                           ?>
 
                   <tr>
                         <td><?php echo $id;?></td>
-                        <td><?php echo $full_name;?></td>
-                        <td><?php echo $username;?></td> 
+                        <td><?php echo $title;?></td> 
+                        <td><?php
+                        if($image_name!="") {
+                                ?> <img src="<?php echo SITE_HOME;?>images/category/<?php echo $image_name; ?>" width="100px">
+                                <?php
+                        }
+                        else {
+                                echo "<div class='error'>Image not Added.</div>";
+                        }
+                        
+                        ?>
+                </td>
+                        <td><?php echo $featured;?></td> 
+                        <td><?php echo $active;?></td> 
                         <td>
-                        <a href="<?php echo SITE_HOME; ?>admin/update-admin.php?id=<?php echo $id; ?>" class="btn btn-secondary">Update Admin</a>
-                              <a href="<?php echo SITE_HOME; ?>admin/delete-admin.php?id=<?php echo $id; ?>" class="btn btn-danger">Delete Admin</a>
+                        <a href="<?php echo SITE_HOME; ?>admin/update-admin.php?id=<?php echo $id; ?>" class="btn btn-secondary">Update Category</a>
+                              <a href="<?php echo SITE_HOME; ?>admin/delete-category.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name;?>" class="btn btn-danger">Delete Category</a>
                         </td>
                   </tr>
 
@@ -81,4 +112,5 @@
 
          </div>
          </div>
+        
 <?php include('partials/footer.php'); ?> 
