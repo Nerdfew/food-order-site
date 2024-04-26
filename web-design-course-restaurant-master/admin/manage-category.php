@@ -22,13 +22,34 @@
             }
 
             if(isset($_SESSOIN['delete'])) {
-                
-                
                  echo $_SESSION['delete'];
-
                 unset($_SESSION['delete']);
             }
          
+            if(isset($_SESSION['no-category-found']))
+            {
+                echo $_SESSION['no-category-found'];
+                unset($_SESSION['no-category-found']);
+
+
+            }
+            if(isset($_SESSION['update']))
+            {
+                echo $_SESSION['update'];
+                unset($_SESSION['update']);
+            }
+
+            if(isset($_SESSOIN['upload'])) {
+                  echo $_SESSION['upload'];
+                 unset($_SESSION['upload']);
+             }
+
+             if(isset($_SESSOIN['failed-remove'])) {
+                  echo $_SESSION['failed-remove'];
+                 unset($_SESSION['failed-remove']);
+             }
+
+
             ?>
             <br>  <br>
             
@@ -41,6 +62,7 @@
                         <th scope="col">Image Name</th>
                         <th scope="col">Featured</th>
                         <th scope="col">Active</th>
+                        <th scope="col">Actions</th>
                   </tr>
 
                   <?php
@@ -86,7 +108,7 @@
                         <td><?php echo $featured;?></td> 
                         <td><?php echo $active;?></td> 
                         <td>
-                        <a href="<?php echo SITE_HOME; ?>admin/update-admin.php?id=<?php echo $id; ?>" class="btn btn-secondary">Update Category</a>
+                        <a href="<?php echo SITE_HOME; ?>admin/update-category.php?id=<?php echo $id; ?>" class="btn btn-secondary">Update Category</a>
                               <a href="<?php echo SITE_HOME; ?>admin/delete-category.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name;?>" class="btn btn-danger">Delete Category</a>
                         </td>
                   </tr>

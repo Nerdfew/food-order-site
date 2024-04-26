@@ -89,6 +89,7 @@ else{
 if(isset($_FILES['image']['name'])) {
     //upload image
     $image_name = $_FILES['image']['name'];
+    if($image_name != ""){
 
     $source_path = $_FILES['image']['tmp_name'];
 
@@ -110,6 +111,7 @@ if(isset($_FILES['image']['name'])) {
         var_dump($upload); 
         die();
     }
+}
 }
 else {
     //dont upload image and set name to blank.
