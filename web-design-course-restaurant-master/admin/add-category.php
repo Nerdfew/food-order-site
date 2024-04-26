@@ -127,8 +127,8 @@ category_active= '$active'
 
 $res = mysqli_query($conn,$sql);
 if($res==true){
-    $_SESSION['add'] = "<div class='success'> Category Added Successfully.</div>";
-header('location:'.SITE_HOME.'admin/manage-category.php');
+    $_SESSION['add'] = "<div class='success'>Category Added Successfully.</div>";
+    header('location:'.SITE_HOME.'admin/manage-category.php');
 
 }
 else{
