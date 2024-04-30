@@ -43,7 +43,7 @@
                 <tr>
                     <td>Select Image: </td>
                     <td>
-                        <input type="file" name= "image">
+                        <input type="file" name="image">
                     </td>
                 </tr>
 
@@ -53,14 +53,14 @@
                         <select name = "category">
 
                         <?php 
-                        $sql = "SELECT * FROM category WHERE category_active ='Yes'";
+                        $sql = "SELECT * FROM category WHERE category_active ='Yes'"; 
                         $res = mysqli_query($conn, $sql);
                         $count = mysqli_num_rows($res);
 
                         if ($count>0) {
                             while($row = mysqli_fetch_assoc($res)) {
-                                $id = $row['id'];
-                                $title = $row['title'];
+                                $id = $row['category_id'];
+                                $title = $row['category_title'];
                                 ?>
 
                                   <option value="<?php echo $id; ?>"><?php echo $title;?></option>
@@ -134,17 +134,17 @@
                 $active = "No";
             }
 
-            if(isset($_FILES['image'] ['name'])){
+            if(isset($_FILES['image']['name'])){
                 $image_name = $_FILES['image']['name'];
 
                 if($image_name!=""){
-                    $ext= end(explode('.', $image_name)) ;
+                    $ext = end(explode('.', $image_name));
 
                     $image_name = "Food-Name-".rand(0000,9999).".".$ext;
 
                     $src = $_FILES['image']['tmp_name'];
 
-                    $dst = "../images/food/".$image_name;
+                    $dst = "/Applications/XAMPP/xamppfiles/htdocs/Untitled/food-order-site/web-design-course-restaurant-master/images/food/".$image_name;
                     $upload = move_uploaded_file($src, $dst);
 
                     if($upload==false){
@@ -158,7 +158,7 @@
             
             }
             else{
-                $image_name = "";
+                $image_name = "no_image_added";
             }
 
             // create 2 sql
@@ -166,17 +166,17 @@
             $sql2="INSERT INTO food SET
             food_title = '$title',
             food_description = '$description',
-            food_price = $price,
-            food_image = '$image_name',
-            category_id = $category,
+            food_price = '$price',
+            food_image_name = '$image_name',
+            category_id = '$category',
             food_featured ='$featured',
             food_active = '$active'
             ";
 
-            $res2 =mysqli_query($con,$sql2);
+            $res2 =mysqli_query($conn, $sql2);
             if($res2==true){
                 $_SESSION['add']= "<div class='success'> Food added successfully.</div>";
-                header('location:'.SITE_HOME.'.admin/manage-food.php');
+                header('location:'.SITE_HOME.'admin/manage-food.php');
                 
             }
             else{

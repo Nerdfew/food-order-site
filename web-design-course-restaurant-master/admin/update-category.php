@@ -102,7 +102,7 @@
     // echo "Clicked";
     $id = $_POST['id'];
     $title= $_POST['title'];
-    $current_image = $_POST['$current_image'];
+    $current_image = $_POST['current_image'];
     $featured = $_POST['featured'];
     $active = $_POST['active'];
 
@@ -156,8 +156,8 @@
     category_title = '$title',
     category_image = '$image_name',
     category_featured = '$featured',
-    category_active = '$active',
-    WHERE category_id = $id
+    category_active = '$active'
+    WHERE category_id = '$id'
     ";
 
     $res2 = mysqli_query($conn, $sql2);
