@@ -115,7 +115,7 @@
             if(isset($_POST['submit'])){
 
                 $title = $_POST['title'];
-                $description = $_POST['description'];
+                $description = str_replace("'", "", $_POST['description']);                
                 $price = $_POST['price'];
                 $category = $_POST['category'];
 
@@ -182,7 +182,7 @@
             else{
 
                 $_SESSION['add']= "<div class='error'> failed to add Food.</div>";
-                header('location:'.SITE_HOME.'.admin/manage-food.php');
+                header('location:'.SITE_HOME.'admin/manage-food.php');
 
             }
 

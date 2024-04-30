@@ -1,7 +1,7 @@
 <?php 
     //create non repeating constants
     session_start();
-
+    ob_start();
     define('SITE_HOME',  'http://localhost/Untitled/food-order-site/web-design-course-restaurant-master/');
     define('HOST', '100.67.126.41');
     define('DB_USERNAME','adminsql');

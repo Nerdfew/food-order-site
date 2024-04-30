@@ -1,4 +1,5 @@
-<?php include('partials/menu.php');?>
+<?php include('partials/menu.php');
+?>
 
 
 <?php
@@ -6,14 +7,8 @@
 
 
         $id = $_GET['id'];
-
-
         $sql2 = "SELECT * FROM food WHERE food_id=$id";
-
-
-
         $res2 = mysqli_query($conn, $sql2);
-
         $row = mysqli_fetch_assoc($res2);
 
 
@@ -34,6 +29,7 @@
 
 
 ?>
+
 
 <div class="main-content">
     <div class="wrapper">
@@ -158,6 +154,8 @@
 
             </table>
         </form>
+    </div>
+</div>
 
         <?php
         
@@ -190,9 +188,7 @@
 
 
 
-                        $image_name_parts  = explode('.', $image_name);
-
-                        $ext = end($image_name_parts);
+                        $ext = end(explode('.', $image_name));
 
                         $image_name = "Food-Name-".rand(0000,9999).'.'.$ext;
 
@@ -204,42 +200,22 @@
 
 
 
-                        if($upload == false) {
-
+                        if($upload == FALSE) {
                             $_SESSION['upload'] = "<div class='error'>Failed to upload new image.</div>";
-
                             header('location:'.SITE_HOME.'admin/manage-food.php');
-
-                            die();
-
+                            exit();
                         }
-
-
                         if($current_image!="") {
-
                             $remove_path  = "/Applications/XAMPP/xamppfiles/htdocs/Untitled/food-order-site/web-design-course-restaurant-master/images/food/".$current_image;
-
                             $remove  = unlink($remove_path);
-
-
                             if($remove == false) {
-
                                 $_SESSION['remove-failed']  = "<div class='error'>Failed to remove image.</div>";
-
                                 header('location:'.SITE_HOME.'admin/manage-food.php');
-
-                                die();
+                                exit();
                             }
                         }
- 
-
-
 
                     }
-
-                    
-
-
 
                 }
 
@@ -272,21 +248,15 @@
             $res3 = mysqli_query($conn, $sql3);
           
 
-            if($res3==TRUE) {
-
-
+            if($res3) {
                 $_SESSION['update'] = "<div class='success'>Food has been updated Successfully!</div>";
-                header('location:'.SITE_HOME.'admin/manage-food.php');
-
-
-
-
-
+                header('location:'. SITE_HOME .'admin/manage-food.php');
+                exit();
             }
-
             else {
                 $_SESSION['update'] = "<div class='success'>Food wasn't able to be updated.</div>";
                 header('location:'.SITE_HOME.'admin/manage-food.php');
+                exit();
 
             }
 
