@@ -16,19 +16,46 @@
             unset($_SESSION['add']);
         }
 
+        if(isset($_SESSION['delete']))
+        { 
+            echo $_SESSION['delete'];
+            unset($_SESSION['delete']);
+        }
+
+        if(isset($_SESSION['upload']))
+        { 
+            echo $_SESSION['upload'];
+            unset($_SESSION['upload']);
+        }
+        if(isset($_SESSION['unauthorize']))
+        { 
+            echo $_SESSION['unauthorize'];
+            unset($_SESSION['unauthorize']);
+        }
+        if(isset($_SESSION['remove-failed']))
+        { 
+            echo $_SESSION['remove-failed'];
+            unset($_SESSION['remove-failed']);
+        }
+        if(isset($_SESSION['update']))
+        { 
+            echo $_SESSION['update'];
+            unset($_SESSION['update']);
+        }
 
         ?>
 
 
-            <table class="tbl">
+            <table class="table">
                   <tr>
-                        <th>S.N.</th>
-                        <th>Title</th>
-                        <th>Price</th>
-                        <th>Image</th>
-                        <th>Featured</th>
-                        <th>Active</th>
-                        <th>Actions</th>
+                        <th scope="col">S.N.</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Image Name</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Featured</th>
+                        <th scope="col">Active</th>
+                   
 
                   </tr>
 
@@ -43,12 +70,12 @@
 
                         while($row = mysqli_fetch_assoc($res)){
 
-                              $id =$row['id'];
-                              $title =$row['title'];
-                              $price =$row['price'];
-                              $image_name =$row['image_name'];
-                              $featured =$row['featured'];
-                              $active =$row['active'];
+                              $id =$row['food_id'];
+                              $title =$row['food_title'];
+                              $price =$row['food_price'];
+                              $image_name =$row['food_image_name'];
+                              $featured =$row['food_featured'];
+                              $active =$row['food_active'];
 
                               ?>
 
@@ -74,8 +101,8 @@
                         <td><?php echo $active ;?></td>
                     
                         <td>
-                            <a href="#" class="btn btn-secondary">  Update food </a>
-                             <a href="#" class="btn btn-danger"> Delete food </a>
+                              <a href= "<?php echo SITE_HOME;?>admin/update-food.php?id=<?php echo $id;?>&image_name=<?php echo $image_name; ?>" class="btn btn-secondary"> Update food </a>
+                             <a href= "<?php echo SITE_HOME;?>admin/delete-food.php?id=<?php echo $id;?>&image_name=<?php echo $image_name; ?>" class="btn btn-danger"> Delete food </a>
                         </td>
                   </tr>
 
@@ -100,6 +127,7 @@
                   
                   
         </table>
+</div>
 </div>
 
 <?php include('partials/footer.php'); ?> 

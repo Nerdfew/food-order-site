@@ -90,16 +90,17 @@ if(isset($_FILES['image']['name'])) {
     //upload image
     $image_name = $_FILES['image']['name'];
     if($image_name != ""){
+        $ext = end(explode('.', $image_name));
+        $image_name  = "Food_Category_".rand(000, 999).'.'.$ext;
 
-    $source_path = $_FILES['image']['tmp_name'];
-
-    $destination_path = "/Applications/XAMPP/xamppfiles/htdocs/Untitled/food-order-site/web-design-course-restaurant-master/images/category/";
-    $image_name  = "Food_Category_".rand(000, 999).'.'.$ext;
+        $source_path = $_FILES['image']['tmp_name'];
+        $destination_path = "/Applications/XAMPP/xamppfiles/htdocs/Untitled/food-order-site/web-design-course-restaurant-master/images/category/";
     
-    $upload = move_uploaded_file($source_path, $destination_path . $image_name);
+    
+        $upload = move_uploaded_file($source_path, $destination_path.$image_name);
 
 
-    $ext = end(explode('.', $image_name));
+    
    
     
     //check if image is uploaded or not
