@@ -26,7 +26,7 @@
                         $featured = $row['category_featured'];
                         $active = $row['category_active'];
                         ?>
-            <a href="category-foods.php">
+            <a href="<?php echo SITE_HOME;?>category-foods.php?category_id=<?php echo $id?>">
                 <div class="box-3 float-container">
                         <?php
                             if($image_name == "") {
