@@ -55,7 +55,39 @@
     </section>
     <!-- fOOD sEARCH Section Ends Here -->
 
+    <!-- CAtegories Section Starts Here -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="text-center">Explore Foods</h2>
 
+            <a href="category-foods.html">
+            <div class="box-3 float-container">
+                <img src="images/pizza.jpg" alt="Pizza" class="img-responsive img-curve">
+
+                <h3 class="float-text text-white">Pizza</h3>
+            </div>
+            </a>
+
+            <a href="#">
+            <div class="box-3 float-container">
+                <img src="images/burger.jpg" alt="Burger" class="img-responsive img-curve">
+
+                <h3 class="float-text text-white">Burger</h3>
+            </div>
+            </a>
+
+            <a href="#">
+            <div class="box-3 float-container">
+                <img src="images/momo.jpg" alt="Momo" class="img-responsive img-curve">
+
+                <h3 class="float-text text-white">Momo</h3>
+            </div>
+            </a>
+
+            <div class="clearfix"></div>
+        </div>
+    </section>
+    <!-- Categories Section Ends Here -->
 
     <!-- fOOD MEnu Section Starts Here -->
     <section class="food-menu">
@@ -75,7 +107,7 @@
                     </p>
                     <br>
 
-                    <a href="#" class="btn btn-primary">Order Now</a>
+                    <a href="<?php echo SITE_HOME;?>order.php?food_id=<?php echo $id;?>" class="btn btn-primary">Order Now</a>
                 </div>
             </div>
 
@@ -171,6 +203,9 @@
 
         </div>
 
+        <p class="text-center">
+            <a href="#">See All Foods</a>
+        </p>
     </section>
     <!-- fOOD Menu Section Ends Here -->
 
