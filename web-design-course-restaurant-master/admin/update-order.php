@@ -16,8 +16,8 @@
             $row=mysqli_fetch_assoc($res);
 
             $food = $row['orders_food'];
-            $price = $row['orders_price'];
-            $quantity = $row['orders_quantity'];
+            $price = (int)$row['orders_price'];
+            $quantity = (int)$row['orders_quantity'];
             $status = $row['orders_status'];
             $customer_name = $row['orders_customer_name'];
             $customer_contact = $row['orders_customer_contact'];
@@ -55,7 +55,7 @@
 <tr>
     <td>Qty</td>
     <td>
-        <input type="number" name="qty" value="<b><?php echo $quantity ;?></b>">
+        <input type="number" name="qty" value="<?php echo $quantity ;?>">
     </td>
 </tr>
 <tr>
@@ -73,7 +73,7 @@
 <tr>
     <td>Customer Name:</td>
     <td>
-        <input type="text" name="cutomer_name" value="<?php echo $customer_name ;?>">
+        <input type="text" name="customer_name" value="<?php echo $customer_name ;?>">
     </td>
     
 </tr>
@@ -81,7 +81,7 @@
 <tr>
 <td>Customer Contact:</td>
     <td>
-        <input type="text" name="cutomer_contact" value="<?php echo $customer_contact ;?>">
+        <input type="text" name="customer_contact" value="<?php echo $customer_contact ;?>">
     </td>
     
 </tr>
@@ -89,7 +89,7 @@
 <tr>
 <td>Customer Email:</td>
     <td>
-        <input type="text" name="cutomer_email" value="<?php echo $customer_email ;?>">
+        <input type="text" name="customer_email" value="<?php echo $customer_email ;?>">
     </td>
     
 </tr>
@@ -118,8 +118,8 @@
         if(isset($_POST['submit'])){
         // echo"Button Clicked";
         $id = $_POST['id'];
-        $price = $_POST['price'];
-        $quantity = $_POST['quantity'];
+        $price = (int)$_POST['price'];
+        $quantity = (int)$_POST['qty'];
         $total = $price * $quantity;
         $status = $_POST['status'];
         $customer_name = $_POST['customer_name'];
@@ -129,8 +129,8 @@
 
         $sql2= "UPDATE orders SET
         orders_quantity = $quantity,
-        orders_total = $total;
-        status = '$status',
+        orders_total = $total,
+        orders_status = '$status',
         orders_customer_name ='$customer_name',
         orders_customer_contact ='$customer_contact',
         orders_customer_email ='$customer_email',

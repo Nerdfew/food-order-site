@@ -88,12 +88,12 @@ fieldset{
 
 .error{
     padding: 2%;
-    color:aquamarine;
+    color:#ff4757;;
 }
 
 .success{
     padding: 2%;
-    color:#ff4757;
+    color:aquamarine
 }
 
 /* CSSS for navbar section */
@@ -138,6 +138,7 @@ fieldset{
 /* CSS for Categories */
 .categories{
     padding: 4% 0;
+    background-color: rgba(205, 209, 228, 0.6); 
 }
 
 .box-3{
@@ -149,7 +150,7 @@ fieldset{
 
 /* CSS for Food Menu */
 .food-menu{
-    background-color: #ececec;
+    background-color: rgb(228, 224, 205, 0.8);
     padding: 4% 0;
 }
 .food-menu-box{

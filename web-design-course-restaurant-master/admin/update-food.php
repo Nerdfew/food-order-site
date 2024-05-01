@@ -147,7 +147,7 @@
         </tr>
 <tr>
     <td colspan="2">
-        <input type="submit" name="submit" value="Add Food" class="btn-secondary">
+        <input type="submit" name="submit" value="Update Food" class="btn-secondary">
 
     </td>
 </tr>

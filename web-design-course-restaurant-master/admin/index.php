@@ -56,7 +56,7 @@
 
         <div class="col-4 text-center">
           <?php 
-          $sql4 = "SELECT SUM(orders_total) AS Total FROM orders WHERE status= 'Delivered'";
+          $sql4 = "SELECT SUM(orders_total) AS Total FROM orders WHERE orders_status= 'Delivered'";
           $res4 = mysqli_query($conn,$sql4);
           $row4 = mysqli_fetch_assoc($res4);
 

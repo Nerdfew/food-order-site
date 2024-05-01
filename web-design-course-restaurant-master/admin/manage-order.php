@@ -82,7 +82,7 @@
                               { 
                                     echo "<label style=' color: green;'>$status</label> ";
                               }
-                        }
+                        
                         ?></td>
                         <td><?php echo $customer_name ;?></td>
                         <td><?php echo $customer_contact ;?></td>
@@ -99,7 +99,7 @@
 
 
                         }
-
+                  }
                   
                   else{
                         echo "<tr><td colspan= '12' class='error'>Order not Available</td></tr>";

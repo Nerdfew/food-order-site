@@ -45,7 +45,7 @@
             
             <a href="/Untitled/food-order-site/web-design-course-restaurant-master/admin/add-admin.php" class="btn btn-primary">Add Admin</a>
 
-            <table class="tbl-full">
+            <table class="table">
                   <tr>
                         <th>S.N.</th>
                         <th>First Name</th>
