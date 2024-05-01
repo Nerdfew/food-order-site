@@ -1,3 +1,6 @@
+<?php include('partials-front/menu.php') ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,35 +15,7 @@
 
 <body>
     <!-- Navbar Section Starts Here -->
-    <section class="navbar">
-        <div class="container">
-            <div class="logo">
-                <a href="#" title="Logo">
-                    <img src="images/logo.png" alt="Restaurant Logo" class="img-responsive">
-                </a>
-            </div>
-
-            <div class="menu text-right">
-                <ul>
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="categories.html">Categories</a>
-                    </li>
-                    <li>
-                        <a href="foods.html">Foods</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="clearfix"></div>
-        </div>
-    </section>
-    <!-- Navbar Section Ends Here -->
+    
 
 
 
@@ -147,7 +122,7 @@ if(isset($_POST['submit'])){
 
     $order_date = date('Y-m-d H:i:sa');
     $status = "ordered";
-    $customer_name = $_POST['full_name'];
+    $customer_name = $_POST['full-name'];
     $customer_contact = $_POST['contact'];
     $customer_email = $_POST['email'];
     $customer_address = $_POST['address'];
@@ -160,7 +135,7 @@ if(isset($_POST['submit'])){
     orders_total = $total,
     orders_date = '$order_date',
     orders_status = '$status',
-    orders_customer_name = '$customer_name'
+    orders_customer_name = '$customer_name',
     orders_customer_contact = '$customer_contact',
     orders_customer_email = '$customer_email',
     orders_customer_address = '$customer_address'
